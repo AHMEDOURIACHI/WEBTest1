@@ -4,6 +4,7 @@
     Author     : formation
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,9 +15,10 @@
     <body>
         
 
-        
+        <c:import url ="Menu"></c:import>
         <h1>Nouvelle Hotel</h1>
-      
+    <center> 
+        <table border="1">
         <form method="POST">
             <label>Nom Hotel</label>
             <input type="text" name="nom"/>
@@ -29,7 +31,8 @@
             <br>
             <input type="submit" value="ajouter"/>
         </form>
-        
-        
+            </table>
+          <c:import url="footer.jsp"></c:import>
     </body>
+</center>
 </html>

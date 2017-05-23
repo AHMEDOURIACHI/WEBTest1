@@ -13,12 +13,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import webtest.entity.Chambre;
+import webtest.service.ChambreService;
 
 /**
  *
  * @author formation
  */
-@WebServlet(name = "AjoutChambreServelet", urlPatterns = {"/AjoutChambreServelet"})
+@WebServlet(name = "AjoutChambreServelet", urlPatterns = {"/ajouter_chambre"})
 public class AjoutChambreServelet extends HttpServlet {
 
     @Override
@@ -30,8 +31,21 @@ public class AjoutChambreServelet extends HttpServlet {
         c.setPrix(Long.valueOf(req.getParameter("prix")));
         c.setHotel(req.getParameter("hotel"));
         
+        ChambreService  service = new ChambreService();
+        service.ajouterchambre(c);
+        resp.sendRedirect("lister_chambres");
+        
         
     }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+      
+        
+        req.getRequestDispatcher("ajouter_chambre.jsp").forward(req, resp);
+    }
+    
+    
 
     
     

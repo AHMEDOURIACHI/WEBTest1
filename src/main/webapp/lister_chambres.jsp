@@ -1,6 +1,6 @@
 <%-- 
-    Document   : lister_hotels
-    Created on : 22 mai 2017, 11:32:29
+    Document   : lister_chambres
+    Created on : 23 mai 2017, 09:43:25
     Author     : formation
 --%>
 
@@ -12,26 +12,28 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    
     <c:import url="Menu"></c:import>
-    <center> 
+    <center>
     <body>
+        
         <h1>${titre}</h1>
         <table border="1">
             <tr>
-                <th>Adresse</th>
-                <th>Nom</th>
-                <th>Code postale</th>
+                <th>nom</th>
+                <th>prix</th>
+                <th>nomhotel</th>
+                
             </tr>
-            <c:forEach items="${ListeHotels}" var="h" >
+            <c:forEach items="${listeChambres}" var="h" >
                 <tr>
                     <td>${h.nom}</td>
-                    <td>${h.adresse}</td>
-                    <td>${h.codePostal}</td>
+                    <td>${h.prix}</td>
+                    <td>${h.hotel}</td>
+                    
                 </tr>
             </c:forEach>
         </table>
           <c:import url="footer.jsp"></c:import>
     </body>
-    </center>
+</center>
 </html>

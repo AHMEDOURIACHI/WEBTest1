@@ -10,19 +10,22 @@ import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import webtest.entity.Chambre;
 
-/**
- *
- * @author formation
- */
 public class ChambreService {
     
-    public List<Chambre>  ajouterchambrre(){
+    public List<Chambre>  listerchambrre(){
         
         EntityManager em=   Persistence.createEntityManagerFactory("PU").createEntityManager();
         
-        em.createQuery("SELECT c FROM Chambre c ORDER BY c.nom").getResultList();
-        
-        return 
+        return  em.createQuery("SELECT c FROM Chambre c ORDER BY c.nom").getResultList();
     }
     
+    public void ajouterchambre(Chambre chambre){
+        
+        EntityManager em= Persistence.createEntityManagerFactory("PU").createEntityManager();
+        
+        em.getTransaction().begin();
+        em.persist(chambre);
+        em.getTransaction().commit();    
+    } 
 }
+

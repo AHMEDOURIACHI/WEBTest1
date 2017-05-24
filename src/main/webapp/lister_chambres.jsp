@@ -16,19 +16,22 @@
     <center>
     <body>
         
-        <h1>${titre}</h1>
+      <center><a href="ajouter_chambre"> Ajouter une Chabre</a> </center>
+    <br>
         <table border="1">
             <tr>
-                <th>nom</th>
-                <th>prix</th>
-                <th>nomhotel</th>
+                <th>nom        </th>
+                <th>prix       </th>
+                <th>nomhotel   </th>
+                <th>Suppression</th>
                 
             </tr>
-            <c:forEach items="${listeChambres}" var="h" >
+            <c:forEach items="${listeChambres}" var="ch" >
                 <tr>
-                    <td>${h.nom}</td>
-                    <td>${h.prix}</td>
-                    <td>${h.hotel}</td>
+                    <td>${ch.nom}</td>
+                    <td>${ch.prix}</td>
+                    <td>${ch.hotel}</td>
+                    <td><a href="supprimer_chambre?idchambre=${ch.id}"> Supprimer une chambre</a></td>
                     
                 </tr>
             </c:forEach>

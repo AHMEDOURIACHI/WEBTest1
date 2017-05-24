@@ -17,6 +17,18 @@ import webtest.servelet.AjoutHotelServelet;
  * @author formation
  */
 public class HotelService {
+    
+     public void supprimerHotel(Long id){
+        
+            EntityManager em=   Persistence.createEntityManagerFactory("PU").createEntityManager();
+            
+            em.getTransaction().begin();
+            
+            Hotel hotel=  em.find(Hotel.class, id);
+            em.remove(hotel);
+        
+            em.getTransaction().commit();
+    }
 
     public  void ajoutHotel(Hotel hotel){
         

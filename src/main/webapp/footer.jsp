@@ -1,6 +1,6 @@
 
 
 <footer>
-    <center> <p>TOUCHEZ PAS A MES PROGRAMMES </p></center>
+    <center> <p>Copyright </p></center>
   
 </footer>

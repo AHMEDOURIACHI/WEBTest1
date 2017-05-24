@@ -9,9 +9,29 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import webtest.entity.Chambre;
+import webtest.entity.Hotel;
+
+
 
 public class ChambreService {
     
+    
+   
+    public void supprimerChambre(Long id){
+        
+         EntityManager em= Persistence.createEntityManagerFactory("PU").createEntityManager();
+        
+          em.getTransaction().begin();
+          Chambre chambre = em.find(Chambre.class, id);
+       
+          em.remove(chambre);
+          
+          em.getTransaction().commit();
+         
+        
+        
+    }
+            
     public List<Chambre>  listerchambrre(){
         
         EntityManager em=   Persistence.createEntityManagerFactory("PU").createEntityManager();

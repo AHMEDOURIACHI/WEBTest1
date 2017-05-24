@@ -16,17 +16,17 @@
         
 
         <c:import url ="Menu"></c:import>
-        <h1>Nouvelle Hotel</h1>
+       
     <center> 
         <table border="1">
         <form method="POST">
-            <label>Nom Hotel</label>
+            <label>Nom Hotel    </label>
             <input type="text" name="nom"/>
             <br>
-             <label>adresse hotel</label>
+            <label>adresse hotel</label>
             <input type="text" name="adresse"/>
             <br>
-             <label>Code postale</label>
+            <label>Code postale</label>
             <input type="text" name="codePostal"/>
             <br>
             <input type="submit" value="ajouter"/>
